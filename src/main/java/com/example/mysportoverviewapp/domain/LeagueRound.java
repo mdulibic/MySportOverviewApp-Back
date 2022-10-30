@@ -22,6 +22,10 @@ public class LeagueRound {
     @JsonManagedReference
     private List<Timetable> timetables;
 
+    @OneToMany(mappedBy = "leagueRound", cascade=CascadeType.ALL)
+    @JsonManagedReference
+    private List<Comment> comments;
+
     public LeagueRound(Long id, String name) {
         this.id = id;
         this.name = name;
