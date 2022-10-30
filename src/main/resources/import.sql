@@ -14,6 +14,8 @@ INSERT INTO round(id, name) VALUES (2, 'Round 2');
 INSERT INTO round(id, name) VALUES (16, 'Round 16');
 INSERT INTO round(id, name) VALUES (17, 'Round 17');
 
+INSERT INTO comments(name, message, league_round_id) VALUES ('mdulibic', 'test komentar', 16);
+
 INSERT INTO timetable (team1, team2, time_and_date, league_round_id) VALUES ('Hajduk', 'Osijek', '05.11. 17:30', 16);
 INSERT INTO timetable (team1, team2, time_and_date, league_round_id) VALUES ('Dinamo', 'Šibenik', '06.11. 17:10', 16);
 INSERT INTO timetable (team1, team2, time_and_date, league_round_id) VALUES ('Varaždin', 'Rijeka', '06.11. 15:00', 16);

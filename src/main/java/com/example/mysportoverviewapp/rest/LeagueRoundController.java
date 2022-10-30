@@ -20,7 +20,14 @@ public class LeagueRoundController {
     @GetMapping("")
     public List<LeagueRound> listRounds() { return service.listAll(); }
 
-    @PostMapping("/add")
+    @PutMapping("/add")
     public void addRound(@RequestBody Long id) { service.add(id);
     }
+
+    @GetMapping("/{id}")
+    public LeagueRound getRound(@PathVariable Long id) { return service.getRound(id); }
+
+
+
+
 }

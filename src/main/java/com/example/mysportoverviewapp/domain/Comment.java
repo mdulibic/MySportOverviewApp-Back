@@ -1,19 +1,20 @@
 package com.example.mysportoverviewapp.domain;
 
+import com.example.mysportoverviewapp.rest.comment.CommentDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity(name="comment")
+@Entity(name = "comments")
 public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String name;
 
     private String message;
 
@@ -21,9 +22,19 @@ public class Comment {
     private Timestamp timestamp;
 
     @ManyToOne
-    @JoinColumn(name="league_round_id", nullable=false)
+    @JoinColumn(name = "league_round_id", nullable = false)
     @JsonBackReference
     private LeagueRound leagueRound;
+
+    public Comment() {
+
+    }
+
+    public Comment(CommentDto dto, LeagueRound round) {
+        this.leagueRound = round;
+        this.name = dto.getName();
+        this.message = dto.getMessage();
+    }
 
     public Long getId() {
         return id;
@@ -33,12 +44,12 @@ public class Comment {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getMessage() {

@@ -73,4 +73,12 @@ public class LeagueRound {
     public void setTimetables(List<Timetable> timetables) {
         this.timetables = timetables;
     }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 }

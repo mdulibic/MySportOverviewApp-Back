@@ -25,4 +25,8 @@ public class LeagueRoundService {
         }
     }
 
+    public LeagueRound getRound(Long id) {
+        return repo.findById(id).orElseThrow();
+    }
+
 }
